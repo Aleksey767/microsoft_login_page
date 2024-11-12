@@ -11,19 +11,21 @@
 <body>
 <main id="main">
   <div class="main-box">
-    <img class="logotype"
+    <img id="logo-small" class="logotype"
          src="assets/images/logo_rect.svg"
          alt="company logotype">
     <div class="sing-in-title">Sign in</div>
-    <div></div>
+    <div class="sing-in-title password">Enter password</div>
     <div id="error-message">
       Enter a valid email address, phone number, or Skype name.
     </div>
-    <input id="input-field" type="email" class="data-input" placeholder="Email, phone, or Skype">
+    <input id="input-email" type="email" class="data-input" placeholder="Email, phone, or Skype">
+    <input id="input-password" type="password" class="data-input" placeholder="Password">
     <div class="no-account">No account? <a class="create-account" href="#">Create one!</a></div>
     <a href="#" class="cant-access">Can't access your account?</a>
     <div class="buttons-block">
       <button class="button back">Back</button>
+      <button class="button sing-in">Sign in</button>
       <button id="next-button" class="button">Next</button>
     </div>
   </div>

