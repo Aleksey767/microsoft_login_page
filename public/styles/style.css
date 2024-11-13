@@ -1,3 +1,237 @@
+#sign-in-title, #input-email, .no-account, .cant-access, #next-button,
+#enter-pass-title {
+    opacity: 0;
+    transform: translateX(500px);
+    transition: opacity 0.4s ease, transform 0.4s ease allow-discrete;
+}
+
+#sign-in-title.animate-slide-in, #input-email.animate-slide-in, .no-account.animate-slide-in,
+.cant-access.animate-slide-in, #next-button.animate-slide-in,
+#enter-pass-title.animate-slide-in {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+#input-password, #enter-pass-title, .sign-in, .forgot-pass,#entered-email {
+    display: none;
+    opacity: 1;
+    transform: translateX(0);
+    transition: opacity 0.5s ease, transform 0.5s ease, display 0s allow-discrete;
+    transition-behavior: allow-discrete;
+}
+
+@starting-style {
+    #input-password, #enter-pass-title, .sign-in, .forgot-pass,#entered-email {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+}
+
+body {
+    background-image: url('../assets/images/background.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    font-family: "Segoe UI Webfont", -apple-system, "Helvetica Neue", "Lucida Grande", "Roboto", "Ebrima", "Nirmala UI", "Gadugi", sans-serif;
+    margin: 0;
+    height: 100vh;
+    position: relative;
+}
+
+main#main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+}
+
+
+
+.logotype {
+    max-height: 36px;
+}
+
+#input-pass {
+    display: none;
+}
+
+.password {
+    display: none;
+}
+
+#arrow {
+    cursor: pointer;
+}
+
+#arrow:hover {
+    background-color: rgb(229, 229, 229);
+    border-radius: 50%;
+}
+
+.sign-in {
+    display: none;
+}
+
+.sing-in-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #1b1b1b;
+    line-height: 1.75rem;
+    font-family: "Segoe UI", "Helvetica Neue", "Lucida Grande", "Roboto", "Ebrima", "Nirmala UI", "Gadugi", "Segoe Xbox Symbol", "Segoe UI Symbol", "Meiryo UI", "Khmer UI", "Tunga", "Lao UI", "Raavi", "Iskoola Pota", "Latha", "Leelawadee", "Microsoft YaHei UI", "Microsoft JhengHei UI", "Malgun Gothic", "Estrangelo Edessa", "Microsoft Himalaya", "Microsoft New Tai Lue", "Microsoft PhagsPa", "Microsoft Tai Le", "Microsoft Yi Baiti", "Mongolian Baiti", "MV Boli", "Myanmar Text", "Cambria Math", serif;
+}
+
+.no-account, .cant-access, .forgot-pass {
+    font-size: 13px;
+    margin-bottom: 16px;
+    width: 100%;
+}
+
+.no-account {
+    margin-bottom: 13px;
+}
+
+.create-account, .cant-access, .forgot-pass {
+    text-decoration: none;
+    color: #0067b8;
+}
+
+.create-account:hover, .cant-access:hover, .forgot-pass:hover {
+    text-decoration: underline;
+    color: black;
+}
+
+.forgot-pass {
+    display: none;
+    margin-top: 10px;
+}
+
+#entered-email {
+    display: none;
+}
+
+
+
+.lower-block > div {
+    display: flex;
+    align-items: center;
+}
+
+.lower-block-image {
+    width: 32px;
+    height: 32px;
+    background-image: url('https://aadcdn.msauth.net/shared/1.0/content/images/signin-options_3e3f6b73c3f310c31d2c4d131a8ab8c6.svg');
+    background-size: cover;
+    margin-right: 10px;
+}
+
+.lower-block-text {
+    font-size: .9375rem;
+    line-height: 1.25rem;
+    font-weight: 400;
+
+}
+
+.back {
+    display: none;
+}
+
+.button.back {
+    line-height: normal;
+    text-overflow: ellipsis;
+    background-color: rgb(204, 204, 204);
+    color: #000;
+    border: 2px solid rgb(204, 204, 204);
+    margin-right: 5px;
+    font-weight: 400;
+}
+
+.button.back:hover {
+    background-color: rgb(170, 170, 170);
+    border-color: rgb(170, 170, 170);
+}
+
+.lower-block:hover {
+    background-color: rgb(229, 229, 229);
+}
+
+.button.back:focus {
+    outline: 2px solid rgb(170, 170, 170);
+    outline-offset: 2px;
+}
+
+.button.back:active {
+    background-color: rgb(136, 136, 136);
+    border-color: rgb(136, 136, 136);
+}
+
+
+* {
+    box-sizing: border-box;
+}
+
+#error-message {
+    display: none;
+    color: #E9182A;
+    font-size: 15px;
+    margin-bottom: 8px;
+    line-height: 20px;
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+
+
+.buttons-block {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+.button {
+    width: auto;
+}
+
+.button:hover {
+    background-color: #005A9E;
+    border-color: #005A9E;
+}
+
+.button:focus {
+    outline: 2px solid #005A9E;
+    outline-offset: 2px;
+}
+
+.button:active {
+    background-color: #004578;
+    border-color: #004578;
+}
+
+
+
+.input::placeholder {
+    font-family: "Segoe UI Webfont", -apple-system, "Helvetica Neue", "Lucida Grande", Roboto, Ebrima, "Nirmala UI", Gadugi, "Segoe Xbox Symbol", "Segoe UI Symbol", "Meiryo UI", "Khmer UI", Tunga, "Lao UI", Raavi, "Iskoola Pota", Latha, Leelawadee, "Microsoft YaHei UI", "Microsoft JhengHei UI", "Malgun Gothic", "Estrangelo Edessa", "Microsoft Himalaya", "Microsoft New Tai Lue", "Microsoft PhagsPa", "Microsoft Tai Le", "Microsoft Yi Baiti", "Mongolian Baiti", "MV Boli", "Myanmar Text", "Cambria Math", serif;
+    font-style: normal;
+    font-weight: 400;
+    color: #1b1b1b;
+    font-size: 15px;
+    line-height: 20px;
+}
+
+.data-input:focus {
+    border-bottom-color: #0067b8;
+}
+
+.main-box,
+.lower-block,
+.footer {
+    transition: all 0.3s ease;
+}
+
 body {
     background-image: url('../assets/images/background.svg');
     background-repeat: no-repeat;
@@ -35,16 +269,29 @@ main#main {
     overflow: hidden;
     margin: 0;
 }
-.logotype{
+
+.logotype {
     max-height: 36px;
 }
-#input-pass{
+
+#input-pass {
     display: none;
 }
-.password{
+
+.password {
     display: none;
 }
-.sing-in{
+
+#arrow {
+    cursor: pointer; /* Указатель меняется на руку при наведении */
+}
+
+#arrow:hover {
+    background-color: rgb(229, 229, 229);
+    border-radius: 50%;
+}
+
+.sign-in {
     display: none;
 }
 
@@ -56,7 +303,7 @@ main#main {
     font-family: "Segoe UI", "Helvetica Neue", "Lucida Grande", "Roboto", "Ebrima", "Nirmala UI", "Gadugi", "Segoe Xbox Symbol", "Segoe UI Symbol", "Meiryo UI", "Khmer UI", "Tunga", "Lao UI", "Raavi", "Iskoola Pota", "Latha", "Leelawadee", "Microsoft YaHei UI", "Microsoft JhengHei UI", "Malgun Gothic", "Estrangelo Edessa", "Microsoft Himalaya", "Microsoft New Tai Lue", "Microsoft PhagsPa", "Microsoft Tai Le", "Microsoft Yi Baiti", "Mongolian Baiti", "MV Boli", "Myanmar Text", "Cambria Math", serif;
 }
 
-.no-account, .cant-access {
+.no-account, .cant-access, .forgot-pass {
     font-size: 13px;
     margin-bottom: 16px;
     width: 100%;
@@ -66,13 +313,23 @@ main#main {
     margin-bottom: 13px;
 }
 
-.create-account, .cant-access {
+.create-account, .cant-access, .forgot-pass {
     text-decoration: none;
     color: #0067b8;
 }
 
-.create-account:hover, .cant-access:hover {
+.create-account:hover, .cant-access:hover, .forgot-pass:hover {
     text-decoration: underline;
+    color: black;
+}
+
+.forgot-pass {
+    display: none;
+    margin-top: 10px;
+}
+
+#entered-email {
+    display: none;
 }
 
 .lower-block {
@@ -108,6 +365,10 @@ main#main {
 
 }
 
+.back {
+    display: none;
+}
+
 .button.back {
     line-height: normal;
     text-overflow: ellipsis;
@@ -137,6 +398,7 @@ main#main {
     border-color: rgb(136, 136, 136);
 }
 
+
 * {
     box-sizing: border-box;
 }
@@ -146,13 +408,12 @@ main#main {
     color: #E9182A;
     font-size: 15px;
     margin-bottom: 8px;
-    line-height:20px;
+    line-height: 20px;
     font-weight: 400;
     font-style: normal;
 }
-#input-password{
-    display: none;
-}
+
+
 .btn, button, input[type='button'], input[type='submit'], input[type='reset'] {
     margin-top: 0;
     margin-bottom: 0;
@@ -270,5 +531,3 @@ footer {
 .data-input:focus {
     border-bottom-color: #0067b8;
 }
-
-

