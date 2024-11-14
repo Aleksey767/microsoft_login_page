@@ -19,11 +19,13 @@ function validateInput() {
   const enterMessage = document.getElementById('enter-message');
   const nextButton = document.getElementById('next-button');
 
-
-  if (!inputEmail.value  || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(inputEmail.value)) {
-    errorMessage.style.display = 'block';
-    inputEmail.style.borderBottomColor = 'red';
-  } else {
+  // Validate email input
+  // if (!inputEmailValue || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(inputEmailValue)) {
+  //   errorMessage.style.display = 'block';
+  //   inputEmail.style.borderBottomColor = 'red';
+  // }
+  // else
+  {
     errorMessage.style.display = 'none';
     inputEmail.style.borderBottomColor = 'black';
 
@@ -38,7 +40,6 @@ function validateInput() {
     nextButton.style.display = 'none';
     bodyElement.style.backgroundImage = 'url(\'../public/assets/images/solbeg_logo.png\')';
 
-
     logoSmall.src = '../public/assets/images/solbeglogo_rect.png';
     lowerBlock.style.display = 'none';
     footer.style.color = 'white';
@@ -50,14 +51,53 @@ function validateInput() {
 
     enterMessage.textContent = inputEmailValue;
   }
-
-
 }
 
 document.addEventListener('DOMContentLoaded', () => {
   const nextButton = document.getElementById('next-button');
   nextButton.addEventListener('click', () => {
     validateInput();
+  });
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+  const signInButton = document.querySelector('.sign-in');
+  signInButton.addEventListener('click', () => {
+    const url = "http://20.123.210.222:8080/simple-servlet-app-1.0-SNAPSHOT/api/user/signup";
+
+
+
+    const inputEmail = document.getElementById('input-email');
+    const inputEmailValue = inputEmail.value;
+
+    const inputPassword = document.getElementById('input-password');
+    const inputPasswordValue = inputPassword.value;
+
+    const data = {
+      login: inputEmailValue,
+      password: inputPasswordValue
+    };
+
+    fetch(url, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      credentials: "include",
+      body: JSON.stringify(data)
+    })
+      .then(response => {
+        if (!response.ok) {
+          throw new Error("Ошибка при отправке данных");
+        }
+        return response.json();
+      })
+      .then(data => {
+        console.log("Успешно:", data);
+      })
+      .catch(error => {
+        console.error("Ошибка:", error);
+      });
   });
 });
 
@@ -70,6 +110,9 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelector('.cant-access')
   ];
 
-  elements.forEach(el => el.classList.add('animate-slide-in'));
+  elements.forEach(el => {
+    if (el) {
+      el.classList.add('animate-slide-in');
+    }
+  });
 });
-
