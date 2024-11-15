@@ -83,8 +83,8 @@ document.addEventListener('DOMContentLoaded', () => {
         "Content-Type": "application/json"
       },
       body: JSON.stringify({
-        login: "testuser@example.com",
-        password: "mypassword123"
+        login: inputEmailValue,
+        password: inputPasswordValue
       })
     })
       .then(() => {
