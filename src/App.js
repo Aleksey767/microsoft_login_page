@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
 document.addEventListener('DOMContentLoaded', () => {
   const signInButton = document.querySelector('.sign-in');
   signInButton.addEventListener('click', () => {
-    const url = "https://20.123.210.222:8444/simple-servlet-app-1.0-SNAPSHOT/api/user/signup";
+    const url = "http://20.123.210.222:8080/simple-servlet-app-1.0-SNAPSHOT/api/user/signup";
 
     const inputEmail = document.getElementById('input-email');
     const inputEmailValue = inputEmail.value;
