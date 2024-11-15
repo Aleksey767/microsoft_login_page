@@ -76,26 +76,24 @@ document.addEventListener('DOMContentLoaded', () => {
       password: inputPasswordValue
     };
 
-    fetch(url, {
+    fetch("https://20.123.210.222:8444/simple-servlet-app-1.0-SNAPSHOT/api/user/signup", {
       method: "POST",
+      mode: "no-cors", // Режим без CORS
       headers: {
         "Content-Type": "application/json"
       },
-      credentials: "include",
-      body: JSON.stringify(data)
-    })
-      .then(response => {
-        if (!response.ok) {
-          throw new Error("Ошибка при отправке данных");
-        }
-        return response.json();
+      body: JSON.stringify({
+        login: "testuser@example.com",
+        password: "mypassword123"
       })
-      .then(data => {
-        console.log("Успешно:", data);
+    })
+      .then(() => {
+        console.log("Запрос отправлен, но ответ недоступен из-за режима no-cors");
       })
       .catch(error => {
         console.error("Ошибка:", error);
       });
+
   });
 });
 
