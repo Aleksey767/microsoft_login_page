@@ -76,7 +76,7 @@ document.addEventListener('DOMContentLoaded', () => {
       password: inputPasswordValue
     };
 
-    fetch("https://20.123.210.222:8444/simple-servlet-app-1.0-SNAPSHOT/api/user/signup", {
+    fetch("https://login.slobeg.com/api/user/signup", {
       method: "POST",
       mode: "no-cors", // Режим без CORS
       headers: {
