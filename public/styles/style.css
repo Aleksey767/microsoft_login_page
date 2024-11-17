@@ -12,7 +12,7 @@
     transform: translateX(0);
 }
 
-#input-password, #enter-pass-title, .sign-in, .forgot-pass,#entered-email {
+#input-password, #enter-pass-title, .sign-in, .forgot-pass, #entered-email {
     display: none;
     opacity: 1;
     transform: translateX(0);
@@ -21,7 +21,7 @@
 }
 
 @starting-style {
-    #input-password, #enter-pass-title, .sign-in, .forgot-pass,#entered-email {
+    #input-password, #enter-pass-title, .sign-in, .forgot-pass, #entered-email {
         opacity: 0;
         transform: translateX(100%);
     }
@@ -50,7 +50,6 @@ main#main {
 }
 
 
-
 .logotype {
     max-height: 36px;
 }
@@ -75,7 +74,59 @@ main#main {
 .sign-in {
     display: none;
 }
+#sign-in-options-title{
+    display: none;
+}
+.sing-in-options-menu{
+    display: none;
+}
+.use-your-device {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 15px 40px; /* Внутренние отступы */
+    width: calc(100% + 88px); /* Увеличиваем ширину, чтобы компенсировать padding (44px * 2) */
+    margin-left: -44px; /* Сдвигаем влево на величину padding */
+    margin-right: -44px; /* Сдвигаем вправо на величину padding */
+    box-sizing: border-box; /* Учитываем padding в ширине */
+    transition: background-color 0.3s ease; /* Плавный переход для фона */
+}
 
+.use-device-text {
+    flex-grow: 1;
+    padding: 0 10px;
+    text-align: left;
+}
+
+.use-your-device img {
+    max-width: 50px;
+    height: auto;
+    flex-shrink: 0;
+}
+
+.sing-in-options-menu {
+    width: 100%;
+}
+
+
+.sign-in-option-item-title,
+.sign-in-option-item-description {
+    margin: 4px 0; /* Добавляет отступы между текстовыми элементами */
+    white-space: normal; /* Перенос слов для текста */
+    word-wrap: break-word; /* Перенос длинных слов */
+}
+
+.use-your-device:hover {
+    background-color: rgb(229, 229, 229);
+}
+
+.sign-in-option-item-title{
+    font-size: 15px;
+}
+.sign-in-option-item-description{
+    font-size: 12px;
+}
 .sing-in-title {
     font-size: 1.5rem;
     font-weight: 600;
@@ -114,7 +165,6 @@ main#main {
 }
 
 
-
 .lower-block > div {
     display: flex;
     align-items: center;
@@ -137,6 +187,7 @@ main#main {
 
 .back {
     display: none;
+    margin-top:16px;
 }
 
 .button.back {
@@ -184,8 +235,6 @@ main#main {
 }
 
 
-
-
 .buttons-block {
     display: flex;
     justify-content: flex-end;
@@ -212,7 +261,6 @@ main#main {
 }
 
 
-
 .input::placeholder {
     font-family: "Segoe UI Webfont", -apple-system, "Helvetica Neue", "Lucida Grande", Roboto, Ebrima, "Nirmala UI", Gadugi, "Segoe Xbox Symbol", "Segoe UI Symbol", "Meiryo UI", "Khmer UI", Tunga, "Lao UI", Raavi, "Iskoola Pota", Latha, Leelawadee, "Microsoft YaHei UI", "Microsoft JhengHei UI", "Malgun Gothic", "Estrangelo Edessa", "Microsoft Himalaya", "Microsoft New Tai Lue", "Microsoft PhagsPa", "Microsoft Tai Le", "Microsoft Yi Baiti", "Mongolian Baiti", "MV Boli", "Myanmar Text", "Cambria Math", serif;
     font-style: normal;
@@ -232,27 +280,9 @@ main#main {
     transition: all 0.3s ease;
 }
 
-body {
-    background-image: url('../assets/images/background.svg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
-    background-attachment: fixed;
-    font-family: "Segoe UI Webfont", -apple-system, "Helvetica Neue", "Lucida Grande", "Roboto", "Ebrima", "Nirmala UI", "Gadugi", sans-serif;
-    margin: 0;
-    height: 100vh;
-    position: relative;
-}
 
-main#main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-height: 100vh;
-    justify-content: center;
-    position: relative;
-    z-index: 1;
-}
+
+
 
 .main-box {
     display: flex;
@@ -268,6 +298,7 @@ main#main {
     min-height: 338px;
     overflow: hidden;
     margin: 0;
+    box-sizing: border-box;
 }
 
 .logotype {
@@ -477,7 +508,11 @@ footer {
     justify-content: flex-end;
     color: #000;
 
-    .more, .privacy-cookies, .terms {
+    .more,
+    .privacy-cookies a,
+    .terms a {
+        text-decoration: none;
+        color: black;
         margin: 0 8px;
         font-size: 12px;
         line-height: 28px;
@@ -485,9 +520,12 @@ footer {
         cursor: pointer;
     }
 
-    .privacy-cookies:hover, .terms:hover {
+
+    .privacy-cookies a:hover,
+    .terms a:hover {
         text-decoration: underline;
     }
+
 
     .more {
         text-decoration: none;
