@@ -32,13 +32,12 @@ const errorMessagePassword = document.getElementById('error-message-password');
 
 function validateInput() {
 
-
-  // Validate email input
-  // if (!inputEmailValue || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(inputEmailValue)) {
-  //   errorMessage.style.display = 'block';
-  //   inputEmail.style.borderBottomColor = 'red';
-  // }
-  // else
+  inputEmailValue = inputEmail.value;
+  if (!inputEmailValue || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(inputEmailValue)) {
+    errorMessage.style.display = 'block';
+    inputEmail.style.borderBottomColor = 'red';
+  }
+  else
   {
     errorMessage.style.display = 'none';
     inputEmail.style.borderBottomColor = 'black';
@@ -100,6 +99,9 @@ function backToFirstBlock() {
 }
 
 function openLoverBlock() {
+  errorMessage.style.display = 'none';
+  inputEmail.style.borderBottomColor = 'black';
+
   sigInOptionsTitle.style.display = 'block';
   signInOptionMenu.style.display = 'flex';
   signInOptionMenu.style.flexDirection = 'column';
@@ -116,6 +118,9 @@ function openLoverBlock() {
 
 }
 function openCantAccessYourAccountBlock(){
+  errorMessage.style.display = 'none';
+  inputEmail.style.borderBottomColor = 'black';
+
   cantAccessYourAccountTitle.style.display = 'block';
   cantAccessMenu.style.display = 'flex';
   cantAccessMenu.style.flexDirection = 'column';
@@ -204,7 +209,6 @@ document.addEventListener('DOMContentLoaded', () => {
       inputPassword.style.borderBottomColor = 'red';
       isValid = false;
     } else {
-      const errorMessagePassword = document.getElementById('errorMessage');
       errorMessagePassword.style.display = 'none';
     }
     if (!isValid) {

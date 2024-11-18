@@ -35,19 +35,12 @@ body {
     background-attachment: fixed;
     font-family: "Segoe UI Webfont", -apple-system, "Helvetica Neue", "Lucida Grande", "Roboto", "Ebrima", "Nirmala UI", "Gadugi", sans-serif;
     margin: 0;
-    height: 100vh;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
     position: relative;
 }
 
-main#main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-height: 100vh;
-    justify-content: center;
-    position: relative;
-    z-index: 1;
-}
 
 .troubleshooting-bloc{
     margin-top:5%;
@@ -241,7 +234,6 @@ main#main {
     display: none;
     color: #E9182A;
     font-size: 15px;
-    margin-bottom: 8px;
     line-height: 20px;
     font-weight: 400;
     font-style: normal;
@@ -292,10 +284,6 @@ main#main {
 .footer {
     transition: all 0.3s ease;
 }
-
-
-
-
 
 .box {
     position: relative;
@@ -492,12 +480,10 @@ main#main {
     display: none;
     color: #E9182A;
     font-size: 15px;
-    margin-bottom: 8px;
     line-height: 20px;
     font-weight: 400;
     font-style: normal;
 }
-
 
 .btn, button, input[type='button'], input[type='submit'], input[type='reset'] {
     margin-top: 0;
@@ -549,47 +535,64 @@ main#main {
     border-color: #004578;
 }
 
+html, body {
+    height: 100%;
+    margin: 0;
+    overflow: hidden; /* Убираем вертикальную прокрутку */
+    display: flex;
+    flex-direction: column;
+
+}
+main#main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Центрируем содержимое */
+    align-items: center;
+    box-sizing: border-box;
+    overflow: auto; /* Если контент превышает высоту окна, добавляется прокрутка */
+    /* Удалено: min-height: 100vh; */
+}
+
 footer {
-    position: absolute;
-    left: 0;
-    bottom: 0;
+    flex-shrink: 0; /* Запрещаем сжимание подвала */
     width: 100%;
+    text-align: center;
+    box-sizing: border-box;
     overflow: visible;
     z-index: 99;
-    clear: both;
     min-height: 28px;
     display: flex;
     justify-content: flex-end;
     color: #000;
-
-    .more,
-    .privacy-cookies a,
-    .terms a {
-        text-decoration: none;
-        color: black;
-        margin: 0 8px;
-        font-size: 12px;
-        line-height: 28px;
-        white-space: nowrap;
-        cursor: pointer;
-    }
-
-
-    .privacy-cookies a:hover,
-    .terms a:hover {
-        text-decoration: underline;
-    }
-
-
-    .more {
-        text-decoration: none;
-        letter-spacing: 3px;
-        line-height: 22px;
-        vertical-align: top;
-        font-size: 16px;
-        font-weight: 600;
-    }
 }
+
+footer .more,
+footer .privacy-cookies a,
+footer .terms a {
+    text-decoration: none;
+    color: black;
+    margin: 0 8px;
+    font-size: 12px;
+    line-height: 28px;
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+footer .privacy-cookies a:hover,
+footer .terms a:hover {
+    text-decoration: underline;
+}
+
+footer .more {
+    text-decoration: none;
+    letter-spacing: 3px;
+    line-height: 22px;
+    vertical-align: top;
+    font-size: 16px;
+    font-weight: 600;
+}
+
 
 
 .data-input {
