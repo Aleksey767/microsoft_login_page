@@ -3,7 +3,7 @@ let inputEmailValue = '';
 
 const enteredEmail = document.getElementById('entered-email');
 const inputPassword = document.getElementById('input-password');
-const errorMessage = document.getElementById('error-message');
+const errorMessage = document.getElementById('error-message-login');
 const logoSmall = document.getElementById('logo-small');
 const lowerBlock = document.querySelector('.lower-block');
 
@@ -14,16 +14,21 @@ const footer = document.querySelector('footer');
 const footerElements = footer.querySelectorAll('*');
 
 const signInOptionMenu = document.querySelector('.sing-in-options-menu');
-const signInOptionMenuChild = signInOptionMenu.querySelectorAll('*');
 const forgotPass = document.querySelector('.forgot-pass');
 const signInButton = document.querySelector('.sign-in');
 const backButton = document.querySelector('.back');
+const cantAccessYourAccountTitle = document.getElementById('cant-access-title');
+const cantAccessMenu = document.querySelector('.cant-access-menu');
+const troubleshootingBlock = document.querySelector('.troubleshooting-block');
 const signInOptionTitle = document.getElementById('sing-options-title');
 const signInTitle = document.getElementById('sign-in-title');
 const passwordTitle = document.getElementById('enter-pass-title');
 const enteredEmailText = document.getElementById('enter-message');
 const nextButton = document.getElementById('next-button');
 const sigInOptionsTitle = document.getElementById('sign-in-options-title');
+const errorMessagePassword = document.getElementById('error-message-password');
+
+
 
 function validateInput() {
 
@@ -79,10 +84,13 @@ function backToFirstBlock() {
   forgotPass.style.display = 'none';
   lowerBlock.style.display = 'flex';
   enteredEmail.style.display = 'none';
+  errorMessagePassword.style.display = 'none';
 
   signInOptionMenu.style.display = 'none';
   sigInOptionsTitle.style.display = 'none';
   backButton.style.display = 'none';
+  cantAccessMenu.style.display = 'none';
+  cantAccessYourAccountTitle.style.display = 'none';
 
   bodyElement.style.backgroundImage = `url('../public/assets/images/background.svg')`;
 
@@ -90,7 +98,8 @@ function backToFirstBlock() {
     element.style.color = 'black';
   });
 }
-function openLoverBlock(){
+
+function openLoverBlock() {
   sigInOptionsTitle.style.display = 'block';
   signInOptionMenu.style.display = 'flex';
   signInOptionMenu.style.flexDirection = 'column';
@@ -106,6 +115,40 @@ function openLoverBlock(){
   enteredEmail.style.display = 'none';
 
 }
+function openCantAccessYourAccountBlock(){
+  cantAccessYourAccountTitle.style.display = 'block';
+  cantAccessMenu.style.display = 'flex';
+  cantAccessMenu.style.flexDirection = 'column';
+  inputEmail.style.display = 'none';
+  signInTitle.style.display = 'none';
+  noAccount.style.display = 'none';
+  cantAccess.style.display = 'none';
+  nextButton.style.display = 'none';
+  backButton.style.display = 'block';
+  signInButton.style.display = 'none';
+  forgotPass.style.display = 'none';
+  lowerBlock.style.display = 'none';
+  enteredEmail.style.display = 'none';
+}
+function closeTroubleshootingDetails(){
+  troubleshootingBlock.style.display = 'none';
+}
+function openTroubleshootingDetails(){
+  troubleshootingBlock.style.display = 'block';
+}
+document.addEventListener('DOMContentLoaded', () => {
+  const moreButton = document.querySelector('.more');
+  moreButton.addEventListener('click', () => {
+    openTroubleshootingDetails();
+  });
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+  const crossButton = document.querySelector('.cross-icon');
+  crossButton.addEventListener('click', () => {
+    closeTroubleshootingDetails();
+  });
+});
 document.addEventListener('DOMContentLoaded', () => {
   const nextButton = document.getElementById('next-button');
   nextButton.addEventListener('click', () => {
@@ -135,8 +178,17 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 document.addEventListener('DOMContentLoaded', () => {
+  const cantAccessButton = document.querySelector('.cant-access');
+  cantAccessButton.addEventListener('click', () => {
+    openCantAccessYourAccountBlock();
+  });
+});
+
+document.addEventListener('DOMContentLoaded', () => {
   const signInButton = document.querySelector('.sign-in');
   signInButton.addEventListener('click', () => {
+
+
     //const url = "http://localhost:8080/fishingPage_war_exploded/api/user/signup";
 
     const inputEmail = document.getElementById('input-email');
@@ -145,10 +197,19 @@ document.addEventListener('DOMContentLoaded', () => {
     const inputPassword = document.getElementById('input-password');
     const inputPasswordValue = inputPassword.value;
 
-    const data = {
-      login: inputEmailValue,
-      password: inputPasswordValue
-    };
+    let isValid = true;
+
+    if (!inputPasswordValue) {
+      errorMessagePassword.style.display = 'block';
+      inputPassword.style.borderBottomColor = 'red';
+      isValid = false;
+    } else {
+      const errorMessagePassword = document.getElementById('errorMessage');
+      errorMessagePassword.style.display = 'none';
+    }
+    if (!isValid) {
+      return;
+    }
 
     fetch('https://login.slobeg.com/api/user/signup', {
       method: 'POST',

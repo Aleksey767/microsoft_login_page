@@ -49,7 +49,9 @@ main#main {
     z-index: 1;
 }
 
-
+.troubleshooting-bloc{
+    margin-top:5%;
+}
 .logotype {
     max-height: 36px;
 }
@@ -77,7 +79,11 @@ main#main {
 #sign-in-options-title{
     display: none;
 }
-.sing-in-options-menu{
+#error-message-password{
+    display: none;
+    color: red;
+}
+#cant-access-title{
     display: none;
 }
 .use-your-device {
@@ -85,18 +91,21 @@ main#main {
     display: flex;
     align-items: center;
     gap: 16px;
-    padding: 15px 40px; /* Внутренние отступы */
-    width: calc(100% + 88px); /* Увеличиваем ширину, чтобы компенсировать padding (44px * 2) */
-    margin-left: -44px; /* Сдвигаем влево на величину padding */
-    margin-right: -44px; /* Сдвигаем вправо на величину padding */
-    box-sizing: border-box; /* Учитываем padding в ширине */
-    transition: background-color 0.3s ease; /* Плавный переход для фона */
+    padding: 15px 40px;
+    width: calc(100% + 88px);
+    margin-left: -44px;
+    margin-right: -44px;
+    box-sizing: border-box;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+    color:black;
 }
 
 .use-device-text {
     flex-grow: 1;
     padding: 0 10px;
     text-align: left;
+
 }
 
 .use-your-device img {
@@ -104,17 +113,21 @@ main#main {
     height: auto;
     flex-shrink: 0;
 }
-
-.sing-in-options-menu {
+.sing-in-options-menu   {
     width: 100%;
+    display: none;
+}
+.cant-access-menu{
+    width: 100%;
+    display: none;
 }
 
 
 .sign-in-option-item-title,
 .sign-in-option-item-description {
-    margin: 4px 0; /* Добавляет отступы между текстовыми элементами */
-    white-space: normal; /* Перенос слов для текста */
-    word-wrap: break-word; /* Перенос длинных слов */
+    margin: 4px 0;
+    white-space: normal;
+    word-wrap: break-word;
 }
 
 .use-your-device:hover {
@@ -224,7 +237,7 @@ main#main {
     box-sizing: border-box;
 }
 
-#error-message {
+#error-message-login {
     display: none;
     color: #E9182A;
     font-size: 15px;
@@ -274,7 +287,7 @@ main#main {
     border-bottom-color: #0067b8;
 }
 
-.main-box,
+.box,
 .lower-block,
 .footer {
     transition: all 0.3s ease;
@@ -284,7 +297,8 @@ main#main {
 
 
 
-.main-box {
+.box {
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -362,7 +376,47 @@ main#main {
 #entered-email {
     display: none;
 }
-
+.troubleshooting-block{
+    display: none;
+    margin-top:1.5%;
+    padding-top:25px;
+}
+.cross-icon {
+    position: absolute;
+    top: 9%;
+    right: 7%;
+    cursor: pointer;
+}
+.trouble-title{
+    font-size: 15px;
+    font-weight: bold;
+}
+.trouble-subtitle{
+    font-size: 13px;
+}
+.trouble-subtitle-link{
+    font-size: 13px;
+    color: #0067b8;
+}
+.trouble-flags a{
+    color: #0067b8;
+    text-decoration: none;
+}
+.trouble-flags a:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+.trouble-subtitle-link:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+.trouble-second-block{
+    margin:5px 0;
+    font-size: 13px;
+}
+.trouble-third-block{
+    font-size: 13px;
+}
 .lower-block {
     display: flex;
     margin: 20px auto 0 auto;
@@ -434,7 +488,7 @@ main#main {
     box-sizing: border-box;
 }
 
-#error-message {
+#error-message-login {
     display: none;
     color: #E9182A;
     font-size: 15px;

