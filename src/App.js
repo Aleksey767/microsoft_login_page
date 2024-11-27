@@ -29,7 +29,6 @@ const sigInOptionsTitle = document.getElementById('sign-in-options-title');
 const errorMessagePassword = document.getElementById('error-message-password');
 
 function validateInput() {
-
   inputEmailValue = inputEmail.value;
   if (!inputEmailValue || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(inputEmailValue)) {
     errorMessage.style.display = 'block';
@@ -48,9 +47,9 @@ function validateInput() {
     forgotPass.style.display = 'block';
     nextButton.style.display = 'none';
 
-    bodyElement.style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../public/assets/images/solbeg_logo.png')`;
+    bodyElement.style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('./public/assets/images/solbeg_logo.png')`;
 
-    logoSmall.src = '../public/assets/images/solbeglogo_rect.png';
+    logoSmall.src = './public/assets/images/solbeglogo_rect.png';
     lowerBlock.style.display = 'none';
 
     footerElements.forEach(element => {
@@ -66,8 +65,7 @@ function validateInput() {
 }
 
 function backToFirstBlock() {
-
-  logoSmall.src = '../public/assets/images/logo_rect.svg';
+  logoSmall.src = './public/assets/images/logo_rect.svg';
   signInTitle.style.display = 'block';
   passwordTitle.style.display = 'none';
   inputEmail.style.display = 'block';
@@ -87,7 +85,7 @@ function backToFirstBlock() {
   cantAccessMenu.style.display = 'none';
   cantAccessYourAccountTitle.style.display = 'none';
 
-  bodyElement.style.backgroundImage = `url('../public/assets/images/background.svg')`;
+  bodyElement.style.backgroundImage = `url('./public/assets/images/background.svg')`;
 
   footerElements.forEach(element => {
     element.style.color = 'black';
