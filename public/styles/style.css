@@ -13,8 +13,8 @@
     transform: translateX(0);
 }
 
-#input-password, #enter-pass-title, .sign-in, .forgot-pass, #entered-email,#sign-in-options-title,.sing-in-options-menu
-,.cant-access-menu,#cant-access-title{
+#sign-in-title,#input-password, #enter-pass-title, .sign-in, .forgot-pass, #entered-email,#sign-in-options-title,.sing-in-options-menu
+,.cant-access-menu,#cant-access-title,#input-email, .no-account, .cant-access, #next-button{
     display: none;
     opacity: 1;
     transform: translateX(0);
@@ -23,12 +23,13 @@
 }
 
 @starting-style {
-    #input-password, #enter-pass-title, .sign-in, .forgot-pass, #entered-email,#sign-in-options-title,.sing-in-options-menu
-    ,.cant-access-menu,#cant-access-title{
+    #sign-in-title,#input-password, #enter-pass-title, .sign-in, .forgot-pass, #entered-email,#sign-in-options-title,.sing-in-options-menu
+    ,.cant-access-menu,#cant-access-title,#input-email, .no-account, .cant-access, #next-button{
         opacity: 0;
         transform: translateX(100%);
     }
 }
+
 .sing-in-title{
     margin-top:10px;
 }

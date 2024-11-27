@@ -206,14 +206,12 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('input-email'),
     document.getElementById('sign-in-title'),
     document.querySelector('.no-account'),
-    document.querySelector('.cant-access'),
-    document.querySelector('.sign-in'),
-    document.querySelector('.button'),
+    document.querySelector('.cant-access')
   ];
 
   elements.forEach(el => {
     if (el) {
-      el.classList.add('animate-slide-in');
+      el.style.display = 'block';
     }
   });
 
