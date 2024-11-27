@@ -134,27 +134,42 @@ function openCantAccessYourAccountBlock() {
 }
 
 function showCopied() {
-  document.querySelectorAll('.trouble-copy *').forEach(element => {
+  document.querySelectorAll('.trouble-copy img, .trouble-copy span').forEach(element => {
     element.style.visibility = 'visible';
   });
+
   const errorCode = document.querySelector('.error-code').textContent.trim();
   const requestId = document.querySelector('.request-id').textContent.trim();
-  const correlationId = document.querySelector('.correlation-id').
-      textContent.
-      trim();
+  const correlationId = document.querySelector('.correlation-id').textContent.trim();
   const timestamp = document.querySelector('.timestamp').textContent.trim();
 
   const textToCopy = `${errorCode}\n${requestId}\n${correlationId}\n${timestamp}`;
 
   navigator.clipboard.writeText(textToCopy).then(() => {
-    console.log('Successfully copied!:');
+    console.log('Successfully copied!:', textToCopy);
+
+    setTimeout(() => {
+      document.querySelectorAll('.trouble-copy img, .trouble-copy span').forEach(element => {
+        element.style.visibility = 'hidden';
+      });
+    }, 5000);
   }).catch(err => {
     console.error('Error:', err);
   });
-
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+  const flaggingLink = document.querySelector('.trouble-flags a');
+
+  flaggingLink.addEventListener('click', function(event) {
+    event.preventDefault();
+
+    if (flaggingLink.textContent.trim() === 'Enable flagging') {
+      flaggingLink.textContent = 'Disable flagging';
+    } else {
+      flaggingLink.textContent = 'Enable flagging';
+    }
+  });
   const cantAccessButton = document.querySelector('.cant-access');
   cantAccessButton.addEventListener('click', () => {
     openCantAccessYourAccountBlock();
